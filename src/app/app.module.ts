@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { BookComponent } from './book/book.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { BookCreateComponent } from './book-create/book-create.component';
+import { BookEditComponent } from './book-edit/book-edit.component';
 
 const appRoutes: Routes = [
   {
@@ -26,6 +27,11 @@ const appRoutes: Routes = [
     data: { title: 'Create Book'}
   },
   {
+    path: 'book-edit',
+    component: BookEditComponent,
+    data: { title: 'Edit Book'}
+  },
+  {
     path: '',
     redirectTo: '/books',
     pathMatch: 'full'
@@ -37,7 +43,8 @@ const appRoutes: Routes = [
     AppComponent,
     BookComponent,
     BookDetailComponent,
-    BookCreateComponent
+    BookCreateComponent,
+    BookEditComponent
   ],
   imports: [
     BrowserModule,

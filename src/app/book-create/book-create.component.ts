@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   selector: 'app-book-create',
   templateUrl: './book-create.component.html',
   styleUrls: ['./book-create.component.css'],
-  //encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None
 })
 export class BookCreateComponent implements OnInit {
   book = {};

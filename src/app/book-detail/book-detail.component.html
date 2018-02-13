@@ -13,3 +13,8 @@
     <dd>{{ book.updated_at }}</dd>
   </dl>
 </div>
+<div class="row">
+  <div class="col-md-12">
+    <a [routerLink]="['/book-edit', book._id]" class="btn btn-success">EDIT</a>
+  </div>
+</div>
