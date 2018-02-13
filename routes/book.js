@@ -30,15 +30,17 @@ router.post('/', function(req, res, next){
 
 /* UPDATE Book */
 router.put('/:id', function(req, res, next){
-  Book.findById(req.params.id, function(err, post){
+  // res.json("Update Book")
+  Book.findByIdAndUpdate(req.params.id, req.body, function(err, post){
     if(err) return next(err);
     res.json(post);
   })
 })
 
 /* DELETE Book */
-router.delete('/', function(req, res, next){
-  Book.findByIdAndRemove(req.params.id, function(err, post){
+router.delete('/:id', function(req, res, next){
+  // res.json("Delete Book");
+  Book.findByIdAndRemove(req.params.id, req.body, function(err, post){
     if(err) return next(err);
     res.json(post)
   })

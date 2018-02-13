@@ -27,7 +27,7 @@ const appRoutes: Routes = [
     data: { title: 'Create Book'}
   },
   {
-    path: 'book-edit',
+    path: 'book-edit/:id',
     component: BookEditComponent,
     data: { title: 'Edit Book'}
   },

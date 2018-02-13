@@ -10,11 +10,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BookEditComponent implements OnInit {
 
-  book = {};
+  book: any = {};
   constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.getBook(this.route.snapshot.params['id'])
+    this.getBook(this.route.snapshot.params['id']);
   }
 
   getBook(id){
@@ -23,8 +23,9 @@ export class BookEditComponent implements OnInit {
     });
   }
 
-  updatedBook(id, data){
-    this.http.put('/book'+id, data)
+  updateBook(id){
+    this.book.updated_date = Date.now();
+    this.http.put('/book/'+id, this.book)
       .subscribe(res =>{
         let id = res['_id'];
         this.router.navigate(['/book-details', id]);
